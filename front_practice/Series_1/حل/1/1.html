@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>js</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      </head>
+<body style="direction: rtl;">
+    <table class="table responsive">
+        <thead>
+            <th>id</th>
+            <th>name</th>
+            <th>lastname</th>
+            <th>address</th>
+            <th>status</th>
+            <th>edit</th>
+            <th>delete</th>
+            <th>copy</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>alex</td>
+                <td>alex</td>
+                <td>alex</td>
+                <td><button class="btn btn-warning" id="statusBtn1"  onclick="setAttr1()">not set </button></td>
+                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="edit_row_table(this)" >modal</button></td>
+                <td><span class="btn btn-danger" onclick="delete_row_table(this)">delete</span></td>
+                <td><span class="btn btn-secondary" onclick="add_row_table(this)">add</span></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>alex</td>
+                <td>alex</td>
+                <td>alex</td>
+                <td><button class="btn btn-warning" id="statusBtn2"  onclick="setAttr2()">not set </button></td>
+                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="edit_row_table(this)" >modal</button></td>
+                <td><span class="btn btn-danger" onclick="delete_row_table(this)">delete</span></td>
+                <td><span class="btn btn-secondary" onclick="add_row_table(this)">add</span></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>alex</td>
+                <td>alex</td>
+                <td>alex</td>
+                <td><button class="btn btn-warning" id="statusBtn3"  onclick="setAttr3()">not set </button></td>
+                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="edit_row_table(this)" >modal</button></td>
+                <td><span class="btn btn-danger" onclick="delete_row_table(this)">delete</span></td>
+                <td><span class="btn btn-secondary" onclick="add_row_table(this)">add</span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- End Modal -->
+
+<script>
+
+    function setAttr1(){
+        btn  =document.getElementById('statusBtn1')
+        if(btn.getAttribute('status') == "not set"){
+            btn.innerHTML = 'enable'
+            btn.setAttribute('status','enable')
+            btn.classList.remove("btn-warning");
+            btn.classList.add("btn-success");
+        }
+        else if(btn.getAttribute('status') == "enable"){
+            btn.innerHTML = 'disable'
+            btn.setAttribute('status','disable')
+            btn.classList.remove("btn-success");
+            btn.classList.add("btn-danger");
+        }
+        else {
+            btn.innerHTML = 'not set'
+            btn.setAttribute('status','not set')
+            
+            btn.classList.remove("btn-danger");
+            btn.classList.add("btn-warning");
+        }    
+    }
+    function setAttr2(){
+        btn  =document.getElementById('statusBtn2')
+        if(btn.getAttribute('status') == "not set"){
+            btn.innerHTML = 'enable'
+            btn.setAttribute('status','enable')
+            btn.classList.remove("btn-warning");
+            btn.classList.add("btn-success");
+        }
+        else if(btn.getAttribute('status') == "enable"){
+            btn.innerHTML = 'disable'
+            btn.setAttribute('status','disable')
+            btn.classList.remove("btn-success");
+            btn.classList.add("btn-danger");
+        }
+        else {
+            btn.innerHTML = 'not set'
+            btn.setAttribute('status','not set')
+            
+            btn.classList.remove("btn-danger");
+            btn.classList.add("btn-warning");
+        }    
+    }
+    function setAttr3(){
+        btn  =document.getElementById('statusBtn3')
+        if(btn.getAttribute('status') == "not set"){
+            btn.innerHTML = 'enable'
+            btn.setAttribute('status','enable')
+            btn.classList.remove("btn-warning");
+            btn.classList.add("btn-success");
+        }
+        else if(btn.getAttribute('status') == "enable"){
+            btn.innerHTML = 'disable'
+            btn.setAttribute('status','disable')
+            btn.classList.remove("btn-success");
+            btn.classList.add("btn-danger");
+        }
+        else {
+            btn.innerHTML = 'not set'
+            btn.setAttribute('status','not set')
+            
+            btn.classList.remove("btn-danger");
+            btn.classList.add("btn-warning");
+        }    
+    }
+
+
+    function edit_row_table(that){
+       that_tr = that.closest('tr')
+       modal_body = document.getElementsByClassName('modal-body')
+       paragraph = document.createElement("p");
+       td_1 = that_tr.getElementsByTagName('td')[0].innerText
+       td_2 = that_tr.getElementsByTagName('td')[1].innerText
+       td_3 = that_tr.getElementsByTagName('td')[2].innerText
+       td_4 = that_tr.getElementsByTagName('td')[3].innerText
+       node = document.createTextNode(td_1 + " " + td_2+ " "+ td_3 + " "+ td_4);
+       paragraph.appendChild(node);
+       modal_body[0].appendChild(paragraph)
+   }
+
+
+
+
+   function delete_row_table(that){        
+        that_tr = that.closest('tr').remove()
+    }
+
+
+    function add_row_table(that){
+        that_tr = that.closest('tr').add()
+    }
+
+</script>
+
+</body>
+</html>

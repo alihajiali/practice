@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+
+{% block content %}
+<div style="padding: 60px; background-color: lightgrey;">
+    <h3 style='text-align: center;'>{{ post.title }}</h3>
+    <hr>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col">
+                <p class="card-text">created on : {{ post.created_on|date:"Y/n/j" }}</p>
+            </div>
+            <div class="col">
+                <p class="card-text">publish on : {{ post.publish_on|date:"Y/n/j" }}</p>
+            </div>
+            <div class="col">
+                <p class="card-text">update on : {{ post.update_on|date:"Y/n/j" }}</p>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <p class="text-center">{{ post.body|safe }}</p>
+    <hr>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col">
+                <p class="card-text">writer : {{ post.writer }}</p>
+            </div>
+            <div class="col">
+                <p class="card-text">like : {{ post.like }}</p>
+                <p class="btn btn-danger">like</p>
+            </div>
+            <div class="col">
+                <p class="card-text">status : {{ post.status }}</p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <p class="card-text">comment : {{ post.comment }}</p>
+
+</div>
+
+{% endblock %}

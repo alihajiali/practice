@@ -1,0 +1,2 @@
+select distinct first_name from actor 
+ORDER BY first_name ASC;

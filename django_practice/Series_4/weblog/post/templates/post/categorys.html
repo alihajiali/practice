@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %} all_post {% endblock %}
+
+
+{% block content %}
+
+{% for post in all_post %}
+<a class="text-center" href="{% url 'post:post_detail' post.slug %}">
+    <div class="card">
+        <div class="card-header">
+            {{ post.title }}
+        </div>
+        <div style="background-color: lightgrey;" class="card-body">
+            <h5 class="card-title">writer : {{ post.writer }}</h5>
+            <p class="card-text">created on : {{ post.created_on|date:"Y/n/j" }}</p>
+            <p style="color:red;">{{ post.id }}</p>
+        </div>
+    </div>
+</a>
+
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <br>
+    <p class="text-center">header</p>
+    <hr>
+    <nav class="float-right navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <button type="button" class="btn-outline-secondary">Home</button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="btn-outline-secondary">Apps</button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="btn-outline-secondary">Games</button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="btn-outline-secondary">Movies</button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="btn-outline-secondary">Books</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br>
+    <br>
+    <hr>
+
+    <div class="container row">
+        <div class="card p-3 col-md-3 col-sm-12 border border-secondary mx-3">
+            <video controls
+                src="https://hajifirouz1.cdn.asset.aparat.com/aparat-video/17dbf732b0dc396ac5aa05e7c4f475bb38804484-1080p.mp4?wmsAuthSign=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6ImUzNjdhZjQ2NzBkMGM1NTQ5ZTk5OGVkZTNiMjJlZDUxIiwiZXhwIjoxNjM1MTA4NjI5LCJpc3MiOiJTYWJhIElkZWEgR1NJRyJ9.IhSCEgCfeQr441iA2wbT87fA3Dn90Snu9Nfu4oREm0E"></video>
+            <div class="card-body">
+                <form class="form-inline">
+                    <input style="width: 100%;" class="form-control mr-sm-2" type="search" placeholder="Search"
+                        aria-label="Search">
+                </form>
+                <br>
+                <ul class="navbar-nav">
+                    <li>
+                        <button style="width: 100%;" type="button" class="btn-outline-secondary">Home</button>
+                    </li>
+                    <li>
+                        <button style="width: 100%;" type="button" class="btn-outline-secondary">Apps</button>
+                    </li>
+                    <li>
+                        <button style="width: 100%;" type="button" class="btn-outline-secondary">Games</button>
+                    </li>
+                    <li>
+                        <button style="width: 100%;" type="button" class="btn-outline-secondary">Movies</button>
+                    </li>
+                    <li>
+                        <button style="width: 100%;" type="button" class="btn-outline-secondary">Books</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-md-8 col-sm-12 border border-secondary">
+            <h1 class="text-right">title</h1>
+            <img style="float: left;"
+                src="data:image/jpeg;base64,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"
+                alt="">
+            <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex possimus corrupti culpa
+                placeat sint
+                laboriosam aliquam ducimus magni eos labore incidunt quisquam, alias reiciendis iste nemo molestiae.
+                Libero nemo necessitatibus vel sint quos accusantium? Alias explicabo perspiciatis iure molestiae
+                voluptatibus a, illum rerum aut incidunt provident natus unde itaque pariatur maxime ab distinctio
+                suscipit saepe! Obcaecati qui, impedit omnis dolorem eum quos corporis saepe odit neque! Ratione aliquid
+                ex iusto aut ullam dignissimos dolorum perspiciatis in nulla reiciendis consectetur autem non optio
+                recusandae laboriosam, aliquam odit modi? Veritatis voluptatibus, ducimus excepturi quidem quam animi
+                tempora explicabo quas, non, ut neque. Velit perferendis iure enim minus expedita maiores! Earum
+                provident nobis veniam ut fuga deserunt temporibus, nulla repellendus cupiditate dicta, voluptates esse,
+                ducimus doloribus. Quidem voluptatem odio temporibus, corrupti suscipit aperiam, aliquid quaerat
+                incidunt id eligendi dolor necessitatibus ad non fugit iste et. Ratione possimus nesciunt deleniti
+                suscipit, alias earum temporibus eum repellendus magni dicta illum voluptate, ex consectetur expedita
+                quam ipsum commodi iste?</p>
+            <div class="container text-center">
+                <img class="col-md-3 my-3" src="https://cdn.isna.ir/d/off/khouzestan/2021/07/27/3/61988472.jpg" alt="chiken">
+                <img class="col-md-3 my-3" src="https://cdn.isna.ir/d/off/khouzestan/2021/07/27/3/61988472.jpg" alt="chiken">
+                <img class="col-md-3 my-3" src="https://cdn.isna.ir/d/off/khouzestan/2021/07/27/3/61988472.jpg" alt="chiken">
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <p class="text-center">footer</p>
+    <br>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    </body>
+</html>

@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>AliHahiAli</title>
+    <style>
+        .card-img-top {
+            width: 100%;
+        }
+
+        .btn {
+            text-align: center;
+            margin: 5px;
+        }
+
+        .card-text {
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3px;
+            background-color: wheat;
+            color: black;
+            font-size: large;
+        }
+
+
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #04AA6D;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+        }
+
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+            position: relative;
+        }
+
+        img.avatar {
+            width: 40%;
+            border-radius: 50%;
+        }
+
+        .container {
+            padding: 16px;
+        }
+
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto 15% auto;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            position: absolute;
+            right: 25px;
+            top: 0;
+            color: #000;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: red;
+            cursor: pointer;
+        }
+
+        .animate {
+            -webkit-animation: animatezoom 0.6s;
+            animation: animatezoom 0.6s
+        }
+
+        @-webkit-keyframes animatezoom {
+            from {
+                -webkit-transform: scale(0)
+            }
+
+            to {
+                -webkit-transform: scale(1)
+            }
+        }
+
+        @keyframes animatezoom {
+            from {
+                transform: scale(0)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+
+        @media screen and (max-width: 300px) {
+            span.psw {
+                display: block;
+                float: none;
+            }
+
+            .cancelbtn {
+                width: 100%;
+            }
+        }
+
+        .dropdown-submenu {
+            position: relative;
+        }
+
+        .dropdown-submenu .dropdown-menu {
+            top: 0;
+            left: 100%;
+            margin-top: -1px;
+        }
+    </style>
+</head>
+
+<body style="background-color: peru;">
+
+    <head>
+        <img id="header_img" style="width: 100%;" src="./pic/header.gif" alt="header_pic">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <li><span style="font-size: large; background-color: rgb(73, 75, 75); padding: 16px; color: white;"
+                            class="glyphicon glyphicon-shopping-cart my-cart-icon">
+                            <span class="badge badge-notify my-cart-badge"></span></span></li>
+                </div>
+                <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><button style="background-color: rgb(73, 75, 75)"><a style="color: white;" href="index.html">خانه</a></button></li>
+
+                        <!-- log in -->
+                        <li><button style="background-color: rgb(73, 75, 75)"
+                                onclick="document.getElementById('id01').style.display='block'" style="width:auto;">ورود
+                            </button></li>
+
+                        <div id="id01" class="modal">
+
+                            <form class="modal-content animate" action="/action_page.php" method="post">
+                                <div class="imgcontainer">
+                                    <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                                        title="Close Modal">&times;</span>
+                                </div>
+
+                                <div class="container" style="width: auto;">
+                                    <label for="uname"><b>نام کاربری</b></label>
+                                    <input type="text" placeholder="نام کاربری خود را وارد نمایید" name="uname"
+                                        required>
+
+                                    <label for="psw"><b>رمز عبور</b></label>
+                                    <input type="password" placeholder="رمز عبور خود را وارد نمایید" name="psw"
+                                        required>
+
+                                    <button type="submit">ورود</button>
+                                    <label>
+                                        <input type="checkbox" checked="checked" name="remember">مرا به خاطر بسپار
+                                    </label>
+                                </div>
+
+                                <div class="container" style="background-color:#f1f1f1; width: auto;">
+                                    <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                                        class="cancelbtn">بیخیال</button>
+                                    <span class="psw"><a href="#">رمز عبور</a>خود را فراموش کرده اید ؟</span>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- register -->
+                        <li><button style="background-color: rgb(73, 75, 75)"
+                                onclick="document.getElementById('id02').style.display='block'" style="width:auto;">ثبت
+                                نام</button></li>
+
+                        <div id="id02" class="modal">
+
+                            <form class="modal-content animate" action="/action_page.php" method="post">
+                                <div class="imgcontainer">
+                                    <span onclick="document.getElementById('id02').style.display='none'" class="close"
+                                        title="Close Modal">&times;</span>
+                                </div>
+
+                                <div class="container" style="width: auto;">
+                                    <label for="email"><b>ایمیل</b></label>
+                                    <input type="text" placeholder="ایمیل خود را وارد نمایید" name="email" required>
+
+                                    <label for="uname"><b>نام کاربری</b></label>
+                                    <input type="text" placeholder="نام کاربری خود را وارد نمایید" name="uname"
+                                        required>
+
+                                    <label for="psw"><b>رمز عبور</b></label>
+                                    <input type="password" placeholder="رمز عبور خود را وارد نمایید" name="psw"
+                                        required>
+
+                                    <p>با ایجاد حساب شما با<a href="#"> شرایط و حریم خصوصی ما </a>موافقت میکنید</p>
+
+                                    <button type="submit">ثبت نام</button>
+                                </div>
+
+                                <div class="container" style="background-color:#f1f1f1; width: auto;">
+                                    <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                                        class="cancelbtn">بیخیال</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- dropdown -->
+
+                        <!-- refremce : "https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_ref_js_dropdown_multilevel_css&stacked=h" -->
+                        
+                        <li class="dropdown">
+                            <button style="background-color: rgb(73, 75, 75)"><a class="dropdown-toggle" data-toggle="dropdown" style="color: white;" href="#">محصولات<span
+                                    class="caret"></span></button></a>
+                            <span class="caret"></span>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-submenu">
+                                    <a class="test" tabindex="-1" href="#">پوشاک <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="test" href="#">مردانه </a>
+                                        <li>
+                                            <a class="test" href="#">زنانه </a>
+                                        <li>
+                                            <a class="test" href="#">بچگانه </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a class="test" tabindex="-1" href="#">لوازم الکترونیکی <span
+                                            class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="test" href="#">گوشی </a>
+                                        <li>
+                                            <a class="test" href="#">لپ تاپ </a>
+                                        <li>
+                                            <a class="test" href="#">تبلت </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a class="test" tabindex="-1" href="#">کالاهای سوپر مارکتی <span
+                                            class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="test" href="#">صبحانه </a>
+                                        <li>
+                                            <a class="test" href="#">نوشیدنی </a>
+                                        <li>
+                                            <a class="test" href="#">تنقلات </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </head>
+
+    <body>
+        <div class="container">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="pic/fun.jpg" alt="Los Angeles" style="width:100%;">
+                    </div>
+
+                    <div class="item">
+                        <img src="pic/pants.jpg" alt="Chicago" style="width:100%;">
+                    </div>
+
+                    <div class="item">
+                        <img src="pic/tv.jpg" alt="New york" style="width:100%;">
+                    </div>
+                </div>
+
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+        <div style="text-align: right; padding: 20px;">
+            <br>
+            <br>
+            <h3>پوشاک</h3>
+            <hr>
+            <div class="row" style="margin: 0 10%;">
+                <div class="col-sm-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="pic/cart/child.jpg" class="card-img-top" alt="child">
+                        <div class="card-body">
+                            <p class="card-text">سرهمی نوزادی</p>
+                            <hr>
+                            <p class="card-text">۱۵۵.۰۰۰ تومان</p>
+                            <div class="col text-center">
+                                <span type="button" class="btn btn-primary my-cart-btn" data-id="1"
+                                    data-name="سرهمی نوزادی" data-summary="summary 1" data-price="155.000"
+                                    data-quantity="1" data-image="pic/cart/child.jpg">افزودن به سبد خرید</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card">
+                        <div class="card" style="width: 18rem;">
+                            <img src="pic/cart/manto.jpg" class="card-img-top" alt="manto">
+                            <div class="card-body">
+                                <p class="card-text">مانتو زنانه مشکی</p>
+                                <hr>
+                                <p class="card-text">۱۴۵.۰۰۰ تومان</p>
+                                <div class="col text-center">
+                                    <span type="button" class="btn btn-primary my-cart-btn" data-id="2"
+                                        data-name="مانتو زنانه مشکی" data-summary="summary 2" data-price="145.000"
+                                        data-quantity="1" data-image="pic/cart/manto.jpg">افزودن به سبد خرید</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="pic/cart/ti_shirt.jpg" class="card-img-top" alt="ti_shirt">
+                        <div class="card-body">
+                            <p class="card-text">تی شرت آستین کوتاه مردانه</p>
+                            <hr>
+                            <p class="card-text">۱۵۰.۰۰۰ تومان</p>
+                            <div class="col text-center">
+                                <span type="button" class="btn btn-primary my-cart-btn" data-id="3"
+                                    data-name="تی شرت آستین کوتاه مردانه" data-summary="summary 3" data-price="150.000"
+                                    data-quantity="1" data-image="pic/cart/ti_shirt.jpg">افزودن به سبد خرید</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <h3>لوازم الکترونیکی</h3>
+            <hr>
+            <div class="row" style="margin: 0 10%;">
+                <div class="col-sm-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="pic/cart/phone.jpg" class="card-img-top" alt="phone">
+                        <div class="card-body">
+                            <p class="card-text">گوشی موبایل سامسونگ</p>
+                            <hr>
+                            <p class="card-text">۶.۴۵۰.۰۰۰ تومان</p>
+                            <div class="col text-center">
+                                <span type="button" class="btn btn-primary my-cart-btn" data-id="4"
+                                    data-name="گوشی موبایل سامسونگ" data-summary="summary 4" data-price="6.450.000"
+                                    data-quantity="1" data-image="pic/cart/phone.jpg">افزودن به سبد خرید</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card">
+                        <div class="card" style="width: 18rem;">
+                            <img src="pic/cart/monitor.jpg" class="card-img-top" alt="monitor">
+                            <div class="card-body">
+                                <p class="card-text">مانیتور خمیده سامسونگ</p>
+                                <hr>
+                                <p class="card-text">۷.۵۰۰.۰۰۰ تومان</p>
+                                <div class="col text-center">
+                                    <span type="button" class="btn btn-primary my-cart-btn" data-id="5"
+                                        data-name="مانیتور خمیده سامسونگ" data-summary="summary 5"
+                                        data-price="7.500.000" data-quantity="1"
+                                        data-image="pic/cart/manitor.jpg">افزودن به سبد خرید</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="pic/cart/charger.jpg" class="card-img-top" alt="charger">
+                        <div class="card-body">
+                            <p class="card-text">شارژر فندکی</p>
+                            <hr>
+                            <p class="card-text">۱۹۹.۵۰۰ تومان</p>
+                            <div class="col text-center">
+                                <span type="button" class="btn btn-primary my-cart-btn" data-id="6"
+                                    data-name="شارژر فندکی" data-summary="summary 6" data-price="199.500"
+                                    data-quantity="1" data-image="pic/cart/charger.jpg">افزودن به سبد خرید</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <h3>کالا های سوپر مارکتی</h3>
+            <hr>
+            <div class="row" style="margin: 0 10%;">
+                <div class="col-sm-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="pic/cart/adams.jpg" class="card-img-top" alt="adams">
+                        <div class="card-body">
+                            <p class="card-text">آدامس خرسی</p>
+                            <hr>
+                            <p class="card-text">۵۹.۲۰۰ تومان</p>
+                            <div class="col text-center">
+                                <span type="button" class="btn btn-primary my-cart-btn" data-id="7"
+                                    data-name="آدامس خرسی" data-summary="summary 7" data-price="59.200"
+                                    data-quantity="1" data-image="pic/cart/adams.jpg">افزودن به سبد خرید</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card">
+                        <div class="card" style="width: 18rem;">
+                            <img src="pic/cart/cofee.jpg" class="card-img-top" alt="cofee">
+                            <div class="card-body">
+                                <p class="card-text">قهره اسپرسو</p>
+                                <hr>
+                                <p class="card-text">۶۳.۱۰۰ تومان</p>
+                                <div class="col text-center">
+                                    <span type="button" class="btn btn-primary my-cart-btn" data-id="8"
+                                        data-name="قهره اسپرسو" data-summary="summary 8" data-price="63.100"
+                                        data-quantity="1" data-image="pic/cart/cofee.jpg">افزودن به سبد خرید</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="pic/cart/khiarshor.jpg" class="card-img-top" alt="khiarshor">
+                        <div class="card-body">
+                            <p class="card-text">خیارشور معمولی سحر</p>
+                            <hr>
+                            <p class="card-text">۲۹.۹۰۰ تومان</p>
+                            <div class="col text-center">
+                                <span type="button" class="btn btn-primary my-cart-btn" data-id="9"
+                                    data-name="خیارشور معمولی سحر" data-summary="summary 9" data-price="29.900"
+                                    data-quantity="1" data-image="pic/cart/khiarshor.jpg">افزودن به سبد خرید</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <footer style="background-color: saddlebrown;color: skyblue;">
+        <div class="row">
+            <div class="col-md-3 col-lg-4 col-xl-3">
+                <h5>درباره ما</h5>
+                <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
+                <p class="mb-0">
+                    علی حاجی علی هستم کارآموز مکتب ۶۰ در بوتکمپ مکتب شریف
+                </p>
+            </div>
+
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto">
+                <h5>لینک های مهم</h5>
+                <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
+                <ul class="list-unstyled">
+                    <li><a style="color: springgreen;" href="index.html">خانه</a></li>
+                    <li><a style="color: springgreen;" href="index.html">محصولات</a></li>
+                    <li><a style="color: springgreen;" href="index.html">سبد خرید</a></li>
+                    <li><a style="color: springgreen;" href="index.html">علاقمندی ها</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-4 col-lg-3 col-xl-3">
+                <h5>ارتباط با ما</h5>
+                <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
+                <ul class="list-unstyled">
+                    <li><i class="fa fa-home mr-2"></i> @alihajiali</li>
+                    <li><i class="fa fa-envelope mr-2"></i> alihajiali1379@gmail.com</li>
+                    <li><i class="fa fa-phone mr-2"></i> 09395242203</li>
+                    <li><i class="fa fa-print mr-2"></i> 09917779582</li>
+                </ul>
+            </div>
+            <div class="col-12 mt-3">
+                <p class="float-left" style="margin: 20px;">
+                    <a href="#" style="color: yellow;font-size: larger;">رفتن به اول صفحه</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <script type='text/javascript' src="js/bootstrap.min.js"></script>
+    <script type='text/javascript' src="js/jquery.mycart.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            var goToCartIcon = function ($addTocartBtn) {
+                var $cartIcon = $(".my-cart-icon");
+                var $image = $('<img width="30px" height="30px" src="' + $addTocartBtn.data("image") + '"/>').css({ "position": "fixed", "z-index": "999" });
+                $addTocartBtn.prepend($image);
+                var position = $cartIcon.position();
+                $image.animate({
+                    top: position.top,
+                    left: position.left
+                }, 500, "linear", function () {
+                    $image.remove();
+                });
+            }
+
+            $('.my-cart-btn').myCart({
+                currencySymbol: 'تومان ',
+                classCartIcon: 'my-cart-icon',
+                classCartBadge: 'my-cart-badge',
+                classProductQuantity: 'my-product-quantity',
+                classProductRemove: 'my-product-remove',
+                classCheckoutCart: 'my-cart-checkout',
+                affixCartIcon: true,
+                showCheckoutModal: true,
+                numberOfDecimals: 2,
+
+                clickOnAddToCart: function ($addTocart) {
+                    goToCartIcon($addTocart);
+                },
+                afterAddOnCart: function (products, totalPrice, totalQuantity) {
+                    console.log("afterAddOnCart", products, totalPrice, totalQuantity);
+                },
+                clickOnCartIcon: function ($cartIcon, products, totalPrice, totalQuantity) {
+                    console.log("cart icon clicked", $cartIcon, products, totalPrice, totalQuantity);
+                },
+                checkoutCart: function (products, totalPrice, totalQuantity) {
+                    var checkoutString = "قیمت کل : " + totalPrice + "\nتعداد کل : " + totalQuantity;
+                    $.each(products, function () {
+                        checkoutString += ("\n " + this.id + " \t " + this.name + " \t " + this.price + " \t " + this.quantity);
+                    });
+                    alert(checkoutString)
+                    console.log("checking out", products, totalPrice, totalQuantity);
+                },
+            });
+
+            $("#addNewProduct").click(function (event) {
+                var currentElementNo = $(".row").children().length + 1;
+                $(".row").append('<div class="col-md-3 text-center"><img src="images/img_empty.png" width="150px" height="150px"><br>product ' + currentElementNo + ' - <strong>$' + currentElementNo + '</strong><br><button class="btn btn-danger my-cart-btn" data-id="' + currentElementNo + '" data-name="product ' + currentElementNo + '" data-summary="summary ' + currentElementNo + '" data-price="' + currentElementNo + '" data-quantity="1" data-image="images/img_empty.png">Add to Cart</button><a href="#" class="btn btn-info">Details</a></div>')
+            });
+        });
+
+
+
+        var modal = document.getElementById('id01');
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+
+        var modal = document.getElementById('id02');
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+
+
+
+        $(document).ready(function () {
+            $('.dropdown-submenu a.test').on("click", function (e) {
+                $(this).next('ul').toggle();
+                e.stopPropagation();
+                e.preventDefault();
+            });
+        });
+
+
+    </script>
+
+</body>
+
+</html>

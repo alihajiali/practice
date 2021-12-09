@@ -1,0 +1,5 @@
+SELECT MAX(rental_duration) AS بزرگترین, 
+MIN(rental_duration) AS کوچکترین, 
+AVG(rental_duration) AS میانگین, 
+SUM(rental_duration) AS مجموع 
+FROM  film;

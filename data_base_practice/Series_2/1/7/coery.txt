@@ -1,0 +1,8 @@
+select 
+	customer.first_name,
+	customer.last_name,
+	rental.return_date,
+	payment.amount
+from rental
+inner join customer on customer.customer_id = rental.customer_id
+inner join payment on customer.customer_id = payment.customer_id;

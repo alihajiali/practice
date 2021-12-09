@@ -1,0 +1,4 @@
+https://studygyaan.com/django/how-to-create-a-unique-slug-in-django
+
+
+https://pypi.org/project/django-randomslugfield/

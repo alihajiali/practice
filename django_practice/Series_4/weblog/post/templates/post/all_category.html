@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %} all_category {% endblock %}
+
+
+{% block content %}
+
+{% for category in all_category %}
+<a class="text-center" href="{% url 'post:category_detail' category.title %}">
+    <div class="card">
+        <div class="card-header">
+            {{ category.title }}
+        </div>
+    </div>
+</a>
+
+{% endfor %}
+{% endblock %}
+
